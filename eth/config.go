@@ -44,8 +44,8 @@ var DefaultConfig = Config{
 		DatasetsOnDisk: 2,
 	},
 	NetworkId:     1,
-	LightPeers:    100,
-	DatabaseCache: 768,
+	LightPeers:    50,
+	DatabaseCache: 256,
 	TrieCache:     256,
 	TrieTimeout:   5 * time.Minute,
 	GasPrice:      big.NewInt(18 * params.Shannon),
@@ -65,9 +65,9 @@ func init() {
 		}
 	}
 	if runtime.GOOS == "windows" {
-		DefaultConfig.Ethash.DatasetDir = filepath.Join(home, "AppData", "Ethash")
+		DefaultConfig.Ethash.DatasetDir = filepath.Join(home, "AppData", "Xlghash")
 	} else {
-		DefaultConfig.Ethash.DatasetDir = filepath.Join(home, ".ethash")
+		DefaultConfig.Ethash.DatasetDir = filepath.Join(home, ".xlghash")
 	}
 }
 
